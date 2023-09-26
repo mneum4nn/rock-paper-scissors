@@ -4,6 +4,7 @@ function getComputerChoice (){
     let choice = options[Math.floor(Math.random()*options.length)];
     return choice;
 }
+
 function round (playerSelection, computerSelection){
     switch (playerSelection) {
         case 'rock':
@@ -40,5 +41,13 @@ function round (playerSelection, computerSelection){
                 return("You lose! Rock beats scissors");
             } 
             break;            
+    }
+}
+function game (){
+    for (let i = 0 ; i<5; i++){
+        let playerSelection = prompt("Rock, paper or scissors?");
+        let computerSelection = getComputerChoice();
+        playerSelection.toLowerCase();
+        console.log(round(playerSelection,computerSelection));
     }
 }
