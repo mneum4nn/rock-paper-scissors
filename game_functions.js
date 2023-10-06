@@ -14,42 +14,42 @@ function playRound (playerSelection, computerSelection){
     switch (playerSelection) {
         case 'rock':
             if (computerSelection == 'rock'){
-                result.textContent("It's a tie! Rock can't beat rock");
+                result.textContent= "It's a tie! Rock can't beat rock";
             }
             else if (computerSelection=='paper'){
-                result.textContent("You lose! Paper beats rock");
+                result.textContent="You lose! Paper beats rock";
                 computerPoints = true;
             }
             else {
                 playerPoints = true;
-                result.textContent("You win! Rock beats scissors");
+                result.textContent="You win! Rock beats scissors";
             }
             break;
         
         case 'paper':
             if (computerSelection=='paper'){
-                result.textContent = ("It's a tie! Paper can't beat paper");
+                result.textContent ="It's a tie! Paper can't beat paper";
             }
             else if (computerSelection=='rock'){
                 playerPoints = true;
-                result.textContent = ("You win! Paper beats rock");
+                result.textContent = "You win! Paper beats rock";
             }
             else {
                 computerPoints = true;
-                result.textContent("You lose! Scissors beat paper");
+                result.textContent = "You lose! Scissors beat paper";
             } 
             break;
         case 'scissors': 
             if (computerSelection=='scissors'){
-                result.textContent("It's a tie! Scissors can't beat scissors");
+                result.textContent = "It's a tie! Scissors can't beat scissors";
             }
             else if (computerSelection=='paper'){
                 playerPoints = true; 
-                result.textContent ("You win! Scissors beats paper");
+                result.textContent = "You win! Scissors beats paper";
             }
             else {
                 computerPoints = true;
-                result.textContent("You lose! Rock beats scissors");
+                result.textContent = "You lose! Rock beats scissors";
             } 
             break;            
     }
@@ -63,24 +63,25 @@ function playRoundEventListener () {
     }); 
 }
 
-/*function game (){
-    for (let i = 0 ; i<5; i++){
-        let playerSelection = prompt("Rock, paper or scissors?");
-        let computerSelection = getComputerChoice();
-        playerSelection.toLowerCase();
-        console.log(round(playerSelection,computerSelection));
-    }
-}*/
 function playGame(){
-    let scoreboard = document.querySelector(".score");
+    let scoreboard = document.querySelector('.score');
+    scoreboard.setAttribute(backgroundColor,green);
+
+    let text = document.querySelector('.results')
     let playerScore = 0; 
     let computerScore = 0
-    while ( playerScore <=5 && computerScore <=5){
+    
+    while ( playerScore <5 && computerScore < 5){
         if (playRoundEventListener() == (true,false)){
             playerScore++;
         } else if (playRoundEventListener() ==(false,true)){
             computerScore++;
         }
         scoreboard.textContent(playerScore + " : " + computerScore);
+    }
+    if (playerScore == 5){
+        text.textContent = "You win this game!";
+    } else if (computerScore == 5){
+        text.textContent = "Your computer wins!";
     }
 }
