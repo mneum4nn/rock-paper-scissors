@@ -5,6 +5,8 @@ let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 let outcome = document.querySelector(".round-outcome");
+let ps = document.querySelector('.playerscore');
+let cs = document.querySelector('.compscore');
 
 function getComputerChoice (){
     let options = ['rock','paper','scissors'];
@@ -102,6 +104,8 @@ if (rock){
         const computerSelect = getComputerChoice();
         playRound(playerSelection,computerSelect);
         endOfGame();
+        ps.innerText = `${playerPoints}`;
+        cs.innerText = `${computerPoints}`;
     }); 
 }
 
@@ -111,6 +115,8 @@ if (scissors){
         const computerSelect = getComputerChoice();
         playRound(playerSelection,computerSelect);
         endOfGame();
+        ps.innerText = `${playerPoints}`;
+        cs.innerText = `${computerPoints}`;
     });
 
 }
@@ -121,6 +127,8 @@ if (paper){
         const computerSelect = getComputerChoice();
         playRound(playerSelection,computerSelect);
         endOfGame();
+        ps.innerText = `${playerPoints}`;
+        cs.innerText = `${computerPoints}`;
     });
     }
 
