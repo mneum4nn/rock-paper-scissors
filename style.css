@@ -1,3 +1,13 @@
-.winner{
-    display:none;
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:400;
+
+}
+button {
+    background-color:azure;
+}
+.round-outcome {
+    display:flex;
+    justify-content: space-between;
+
 }
