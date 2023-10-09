@@ -65,12 +65,11 @@ function playRoundEventListener () {
 
 function playGame(){
     let scoreboard = document.querySelector('.score');
-    scoreboard.setAttribute(backgroundColor,green);
+    scoreboard.style.backgroundColor = 'green';
 
     let text = document.querySelector('.results')
     let playerScore = 0; 
     let computerScore = 0
-    
     while ( playerScore <5 && computerScore < 5){
         if (playRoundEventListener() == (true,false)){
             playerScore++;
